@@ -80,7 +80,6 @@ class Map extends React.Component {
 
       const onDragEnd = (marker, stateKey) => {
         const lngLat = marker.getLngLat()
-        console.log(lngLat)
 
         this.setState({
           [stateKey]: [
@@ -91,18 +90,18 @@ class Map extends React.Component {
         getRoute(this.state.start, this.state.finish)
       }
 
-      const startMarker = new mapboxgl.Marker({
-        draggable: true,
-        color: '#00ff00'
-      })
-        .setLngLat([174.7571, -41.2873])
-        .addTo(map)
-
       const finishMarker = new mapboxgl.Marker({
         draggable: true,
         color: '#ff3300'
       })
-        .setLngLat([174.7571, -41.2873])
+        .setLngLat([174.7741, -41.2970])
+        .addTo(map)
+
+      const startMarker = new mapboxgl.Marker({
+        draggable: true,
+        color: '#00ff00'
+      })
+        .setLngLat([174.7741, -41.2970])
         .addTo(map)
 
       startMarker.on('dragend', () => { onDragEnd(startMarker, 'start') })
